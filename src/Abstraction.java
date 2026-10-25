@@ -1,28 +1,29 @@
 //interface implementation
-interface Car{
+interface AbstractionCar{
     void startEngine();
     void stopEngine();
 }
-class SportsCar implements Car{
+class AbstractionSportsCar implements AbstractionCar{
     String brand;
     String model;
     boolean isEngineOn=false;
-    public SportsCar( String brand,String model){
+    public AbstractionSportsCar(String brand,String model){
         this.brand=brand;
         this.model=model;
     }
     public void startEngine(){
         isEngineOn=true;
-        System.out.print("car stated ");
+        System.out.println("Car started");
     }
     public void stopEngine(){
         isEngineOn=false;
+        System.out.println("Car stopped");
     }
 }
 
 public class Abstraction {
-    static void main() {
-        Car my=new SportsCar("mustang","racing car");
+    public static void main(String[] args) {
+        AbstractionCar my=new AbstractionSportsCar("mustang","racing car");
         my.startEngine();
         my.stopEngine();
 
